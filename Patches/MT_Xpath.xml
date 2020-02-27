@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+			  <xpath>*/ThoughtDef[defName="Insulted"]/nullifyingTraits</xpath>
+			  <success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThoughtDef[defName="Insulted"]</xpath>
+				<value>
+					<nullifyingTraits>
+						<li>MT_Eccentric</li>
+					</nullifyingTraits>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+    <Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+			  <xpath>*/ThoughtDef[defName="Slighted"]/nullifyingTraits</xpath>
+			  <success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThoughtDef[defName="Slighted"]</xpath>
+				<value>
+					<nullifyingTraits>
+						<li>MT_Eccentric</li>
+					</nullifyingTraits>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,10 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Assemblies\MoloyTraits.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\Assemblies\MoloyTraits.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\v1.1\Assemblies\MoloyTraits.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MoloyTraits\Source\PlagueGun\PlagueGun\obj\Debug\MoloyTraits.csproj.CopyComplete
