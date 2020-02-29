@@ -68,7 +68,7 @@ public class MoloyTraitChecker : WorldComponent
         MT_BPD.Add(BodyPartDefOf.Brain);
     }
 
-    public override void WorldComponentTick()
+public override void WorldComponentTick()
     {
 
         ticksUntillNextInspirationCheck--;
@@ -83,7 +83,6 @@ public class MoloyTraitChecker : WorldComponent
                 questMoods.Remove(questMood);
             }
         }
-
 
         if (ticksUntilNextTraitCheck <= 0)
         {
@@ -171,8 +170,6 @@ public class MoloyTraitChecker : WorldComponent
             }
         }
 
-
-
     }
 
     void CheckForInspiration(Pawn pawn, InspirationDef inspiration, float chance)
@@ -221,6 +218,10 @@ public class MoloyTraitChecker : WorldComponent
         Scribe_Values.Look(ref ticksUntillNextInspirationCheck, "ticksUntillNextInspirationCheck");
         Scribe_Values.Look(ref ticksSinceQuestCompleted, "ticksSinceQuestCompleted");
         Scribe_Collections.Look(ref questMoods, "questMoods", LookMode.Deep);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            if (questMoods == null)
+                questMoods = new List<QuestMood>();
     }
 
     private class MoloyTrait
@@ -235,9 +236,6 @@ public class MoloyTraitChecker : WorldComponent
             traitDef = _traitDef;
             range = _range;
         }
-
-
-
 
     }
 
