@@ -7,6 +7,16 @@
     <li>1.1</li>
   </supportedVersions>
   <packageId>Moloy559.MoloyTraits</packageId>
+  <modDependencies>
+      <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      </li>
+    </modDependencies>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+    </loadAfter>
   <description>V1.3
    Have you ever thought that most traits seem a bit boring? This mod looks to add traits that will change the way you play with that colonist.
 
