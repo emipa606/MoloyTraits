@@ -18,6 +18,24 @@
 		</operations>
 	</Operation>
 
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+			  <xpath>*/ThoughtDef[defName="InsultedMood"]/nullifyingTraits</xpath>
+			  <success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThoughtDef[defName="InsultedMood"]</xpath>
+				<value>
+					<nullifyingTraits>
+						<li>MT_Eccentric</li>
+					</nullifyingTraits>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
     <Operation Class="PatchOperationSequence">
 		<success>Always</success>
 		<operations>

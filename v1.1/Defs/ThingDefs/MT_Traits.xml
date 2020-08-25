@@ -105,7 +105,7 @@
 
   <TraitDef>
     <defName>MT_Hermit</defName>
-    <commonality>0.8</commonality>
+    <commonality>0.4</commonality>
     <degreeDatas>
       <li>
         <label>Hermit</label>
@@ -126,6 +126,9 @@
         </statOffsets>
       </li>
     </degreeDatas>
+    <requiredWorkTags>
+      <li>PlantWork</li>
+    </requiredWorkTags>
   </TraitDef>
 
   <TraitDef>

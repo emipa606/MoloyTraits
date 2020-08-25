@@ -92,7 +92,7 @@ public override void WorldComponentTick()
             maps = Find.Maps;
             foreach (Map map in maps)
             {
-                List<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+                var pawns = map.mapPawns.AllPawnsSpawned.Where(x => x.RaceProps.Humanlike);
                 foreach (Pawn pawn in pawns)
                 {
                     foreach (MoloyTrait moloyTrait in moloyTraits)
@@ -152,7 +152,6 @@ public override void WorldComponentTick()
                                             {
                                                 lumedPawns.Add(affectedPawn, new LumedPawn(LumedPawn.getStage(pawn), pawn.Position.DistanceTo(affectedPawn.Position)));
                                             }
-                                            //MAddHediff(affectedPawn, MoloyTraitDefOf.MT_TyrantIsNear, MT_BPD);
                                         }
                                     }
                                     break;
