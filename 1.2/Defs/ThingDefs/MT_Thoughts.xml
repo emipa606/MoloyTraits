@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>PettyHasEx</defName>
+    <workerClass>MT_ThoughtWorker_ExHasLover</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>MT_Petty</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>My ex moved on!</label>
+        <description>My ex moved on and I'm still alone! It's so unfair, I can't stand it!</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>PettyHasExReversed</defName>
+    <workerClass>MT_ThoughtWorker_ExHasNoLover</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>MT_Petty</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>I found new love!</label>
+        <description>I found a new lover and my ex is still alone! I'm so much better than them!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>LuminaryMood</defName>
+    <workerClass>MT_ThoughtWorker_LuminaryMood</workerClass>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>MT_Luminary</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>Very Unhappy Luminary</label>
+        <description>The Luminary is uphappy, this makes me very upset!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+      <li>
+        <label>Unhappy Luminary</label>
+        <description>The Luminary is uphappy, this makes me upset!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Happy Luminary</label>
+        <description>The Luminary is happy, this makes me feel good!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Very Happy Luminary</label>
+        <description>The Luminary is very happy, this makes me feel great!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>VenturousQuestStatusMood</defName>
+    <workerClass>MT_ThoughtWorker_VenturousQuestStatusMood</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>MT_Venturous</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Quests Failed</label>
+        <description>We've failed an ungodly amount of quests, this place is a joke.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quests Failed</label>
+        <description>We've failed far too many quests recently, this is terrible!</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quests Failed</label>
+        <description>We've failed a few quests recently, this is not good.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quest Failed</label>
+        <description>We've failed a quest recently, that's annoying.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quest success</label>
+        <description>We've succeeded on a quest recently, this is going good.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quests success</label>
+        <description>We've succeeded on some quests recently, this is fantastic!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+      <li>
+        <label>Quests success</label>
+        <description>We've succeeded on an unholy amount of quests recently, this place kicks ass!</description>
+        <baseMoodEffect>24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>VenturousQuestCompletedMood</defName>
+    <workerClass>MT_ThoughtWorker_VenturousQuestCompletedMood</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>MT_Venturous</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>No Quests Completed</label>
+        <description>Its been forever since we've completed a quest. Life is boring and dull.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+      <li>
+        <label>No Quests Completed</label>
+        <description>Its been a really long time since we've completed a quest. We need to finish one soon!</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+      <li>
+        <label>No Quests Completed</label>
+        <description>Its been a long time since we've completed a quest. Its boring to never take risks!</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+      <li>
+        <label>No Quests Completed</label>
+        <description>Its been a little while since we've completed a quest. We should complete one.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>TyrantIsNear</defName>
+    <workerClass>MT_ThoughtWorker_TyrantNear</workerClass>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>Nearby Tyrannic Colonist</label>
+        <description>Every little thing I do is being criticized and corrected, I wish they would just let me be!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

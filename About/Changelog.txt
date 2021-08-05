@@ -1,0 +1,4 @@
+# Changelog for MoloyTraits
+
+1.0.1.0 - Updated to 1.3
+

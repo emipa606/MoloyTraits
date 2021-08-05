@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef Name="TraitBuffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>MT_ConductorIsNear</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>A Conductor is Near</label>
+    <description>Directed by the presence of another person to move faster.</description>
+    <labelNoun>A nearby Conductor</labelNoun>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>200</min>
+          <max>200</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>MT_CommanderIsNear</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>A Commander is Near</label>
+    <description>Directed by the presence of another person in regards to aiming, improves accuracy.</description>
+    <labelNoun>A nearby Commander</labelNoun>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>200</min>
+          <max>200</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>MT_TyrantIsNear</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>A Tyrannic Leader is Near</label>
+    <description>Directed harshly by the presence of another pawns to move and work faster, increases stress, negatively affecting the mood.</description>
+    <labelNoun>A nearby Tyrant</labelNoun>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>200</min>
+          <max>200</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <WorkSpeedGlobal>0.20</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <!-- LUMINARY HEDIFFS-->
+</Defs>

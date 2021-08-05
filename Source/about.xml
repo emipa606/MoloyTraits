@@ -1,49 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Moloy Traits (Continued)</name>
-  <packageId>Mlie.MoloyTraits</packageId>
+  <name>Moloy Traits</name>
   <author>Moloy559</author>
-  <url>https://github.com/emipa606/MoloyTraits</url>
   <supportedVersions>
     <li>1.0</li>
     <li>1.1</li>
     <li>1.2</li>
-    <li>1.3</li>
   </supportedVersions>
+  <packageId>Moloy559.MoloyTraits</packageId>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
       <displayName>Harmony</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
-Update of Moloy559s mod
-https://steamcommunity.com/sharedfiles/filedetails/?id=1777036482
-
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
-
-[table]
-    [tr]
-        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
-        [td][url=https://github.com/emipa606/MoloyTraits][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
-    [/tr]
-[/table]
-	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
-Have you ever thought that most traits seem a bit boring? This mod looks to add traits that will change the way you play with that colonist.
+  <description>V1.3
+   Have you ever thought that most traits seem a bit boring? This mod looks to add traits that will change the way you play with that colonist.
 
 There are 11 new traits.
 
-Commander -
+Commander (Uncommon)-
 This pawn is an excellent leader in ranged combat. With their help, nearby friendly pawns know where to aim and can hit targets they might otherwise miss.
 Nearby friendly pawns gain a bonus to ranged hit chance. 
 
-Conductor -
+Conductor (Uncommon)-
 This pawn is an efficient leader and can guide the movements of nearby pawns. 
 Nearby friendly pawns gain a bonus to movement speed.
 
@@ -63,11 +47,11 @@ This pawn is filled with energy and can become inspired to move quickly even whe
 Every day this pawn has a 5% of gaining the “Go Frenzy” Inspiration.
 
 Volatile Crafter - 
-This pawn is a genius crafter that can frequently make fantastic items, unfortunately, they often struggle with the fact others can&apos;t see the world the way they do, leading to frequent mental breaks.
+This pawn is a genius crafter that can frequently make fantastic items, unfortunately, they often struggle with the fact that others can't see the world the way they do, leading to frequent mental breaks.
 +3 Crafting
 +3 Artistic
 Every day this pawn has a 10% of gaining the “Inspired Creativity” Inspiration
-This pawns mental break threshold has been increased by 20%.
+This pawn’s mental break threshold has been increased by 20%.
 
 Charismatic -
 This pawn has a shining personality and has a greater social impact because of it.
@@ -76,46 +60,33 @@ This pawn makes a larger impact when talking to pawns.
 This pawn gets a better price when negotiating. 
 
 Eccentric -
-This pawn acts oddly and misses social cues. Their behavior often makes their words more impactful, for better or worse… They are so out of the social loop that they don&apos;t realize when they are being insulted.
+This pawn acts oddly and misses social cues. Their behavior often makes their words more impactful, for better or worse… They are so out of the social loop that they don't realize when they are being insulted.
 +4 Intelligence
 -4 Social
 This pawn has a higher social impact.
 This pawn receives no debuff for being insulted or slighted.
 
-Venturous - 
+Venturous
 This pawn loves to take risks and complete quests. They will receive mood buffs for successful quests, and debuffs for failed quests.
 They also slowly gain a mood debuff if a quest has not been completed in a while.
 
 Tyrannic (Rare) -
 This pawn harshly criticizes and dictates the actions of others. Friendly Pawns near this pawn move and work faster as a result of the dictating, but receive a mood debuff from the added stress.
 
-Luminary (Rare) -
+Luminary (Very Rare) -
 For whatever reason, everyone seems to really care how this pawn is feeling.
 Friendly pawns on the same map as this pawn will receive a mood buff/debuff depending on the mood of this pawn.
 Psychopaths and other Luminaries are unaffected. 
 If multiple friendly Luminaries are on the same map, pawns will only be affected by the Luminary they are closest too.
 
+I plan to keep working on this mod. If you have any suggestions, please leave them as a comment.
+
 License -
-The source is included with the download, just don’t claim it as your own and I don&apos;t care what you do with it.
+The source is included with the download, just don’t claim it as your own and I don't care what you do with it.
 
 Compatibility - 
 This mod should be compatible with everything. 
 
-If you like these traits, check out GwenBlanketKnight&apos;s mods. 
-https://steamcommunity.com/sharedfiles/filedetails/?id=1873132911
-Lots of great traits to enjoy.
 
-Also here&apos;s a Github link so you can tell me how my code is the scourge of the earth: https://github.com/moloy559/MoloyTraits/
-
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
-[list]
-[*] See if the the error persists if you just have this mod and its requirements active.
-[*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
-[*] For best support, please use the Discord-channel for error-reporting.
-[*] Do not report errors by making a discussion-thread, I get no notification of that.
-[*] If you have the solution for a problem, please post it to the GitHub repository.
-[/list]
-</description>
+  </description>
 </ModMetaData>
-

@@ -1,5 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\PlagueGun.csprojAssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\PlagueGun.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\Assemblies\Plague.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Source\PlagueGun\PlagueGun\obj\Debug\Plague.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\PlagueGun\Assemblies\Plague.dll
