@@ -1,8 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
-//namespace MoloyTraits
-//{
+namespace MoloyTraits;
+
 internal class MT_ThoughtWorker_ExHasLover : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
@@ -20,21 +20,12 @@ internal class MT_ThoughtWorker_ExHasLover : ThoughtWorker
         }
 
         var exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExSpouse);
-        if (exLoverPawn == null)
+        if (exLoverPawn != null)
         {
-            exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExLover);
-            if (exLoverPawn == null)
-            {
-                return false;
-            }
+            return LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn);
         }
 
-        if (LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn))
-        {
-            return true;
-        }
-
-        return false;
+        exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExLover);
+        return exLoverPawn != null && LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn);
     }
 }
-//}

@@ -3,37 +3,36 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace MoloyHarmony
+namespace MoloyTraits;
+
+[StaticConstructorOnStartup]
+public static class HarmonyPatches
 {
-    [StaticConstructorOnStartup]
-    public static class HarmonyPatches
+    private static readonly Type patchType = typeof(HarmonyPatches);
+
+    static HarmonyPatches()
     {
-        private static readonly Type patchType = typeof(HarmonyPatches);
+        var harmony = new Harmony("rimworld.moloy.moloytraits.main");
 
-        static HarmonyPatches()
+        harmony.Patch(AccessTools.Method(typeof(Quest), nameof(Quest.End)),
+            postfix: new HarmonyMethod(patchType, nameof(QuestEndPostFix)));
+    }
+
+    public static void QuestEndPostFix(Quest __instance, QuestEndOutcome outcome, bool sendLetter = true)
+    {
+        var moloyTraitChecker = Find.World.GetComponent<MoloyTraitChecker>();
+
+        switch (outcome)
         {
-            var harmony = new Harmony("rimworld.moloy.moloytraits.main");
+            case QuestEndOutcome.Fail:
+                moloyTraitChecker.questMoods.Add(new MoloyTraitChecker.QuestMood(840000, -1));
+                break;
 
-            harmony.Patch(AccessTools.Method(typeof(Quest), nameof(Quest.End)),
-                postfix: new HarmonyMethod(patchType, nameof(QuestEndPostFix)));
+            case QuestEndOutcome.Success:
+                moloyTraitChecker.questMoods.Add(new MoloyTraitChecker.QuestMood(900000, +1));
+                break;
         }
 
-        public static void QuestEndPostFix(Quest __instance, QuestEndOutcome outcome, bool sendLetter = true)
-        {
-            var moloyTraitChecker = Find.World.GetComponent<MoloyTraitChecker>();
-
-            switch (outcome)
-            {
-                case QuestEndOutcome.Fail:
-                    moloyTraitChecker.questMoods.Add(new MoloyTraitChecker.QuestMood(840000, -1));
-                    break;
-
-                case QuestEndOutcome.Success:
-                    moloyTraitChecker.questMoods.Add(new MoloyTraitChecker.QuestMood(900000, +1));
-                    break;
-            }
-
-            moloyTraitChecker.ticksSinceQuestCompleted = 0;
-        }
+        moloyTraitChecker.ticksSinceQuestCompleted = 0;
     }
 }

@@ -4,6 +4,8 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
+namespace MoloyTraits;
+
 public class MoloyTraitChecker : WorldComponent
 {
     private readonly Dictionary<Pawn, LumedPawn> lumedPawns = new Dictionary<Pawn, LumedPawn>();
@@ -194,12 +196,7 @@ public class MoloyTraitChecker : WorldComponent
             return false;
         }
 
-        if (_active.Position.DistanceTo(_affected.Position) > _range)
-        {
-            return false;
-        }
-
-        return true;
+        return !(_active.Position.DistanceTo(_affected.Position) > _range);
     }
 
     public override void ExposeData()

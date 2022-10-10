@@ -1,8 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
-//namespace Plague
-//{
+namespace MoloyTraits;
+
 internal class MT_ThoughtWorker_ExHasNoLover : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
@@ -19,21 +19,17 @@ internal class MT_ThoughtWorker_ExHasNoLover : ThoughtWorker
         }
 
         var exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExSpouse);
+        if (exLoverPawn != null)
+        {
+            return !LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn);
+        }
+
+        exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExLover);
         if (exLoverPawn == null)
         {
-            exLoverPawn = p.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.ExLover);
-            if (exLoverPawn == null)
-            {
-                return false;
-            }
+            return false;
         }
 
-        if (!LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn))
-        {
-            return true;
-        }
-
-        return false;
+        return !LovePartnerRelationUtility.HasAnyLovePartner(exLoverPawn);
     }
 }
-//}

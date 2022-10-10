@@ -1,8 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
-//namespace MoloyTraits
-//{
+namespace MoloyTraits;
+
 internal class MT_ThoughtWorker_LuminaryMood : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
@@ -20,12 +20,6 @@ internal class MT_ThoughtWorker_LuminaryMood : ThoughtWorker
         }
 
         var lumeLevel = moloyTraitChecker.pawnLumeStage(p);
-        if (lumeLevel == 99)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        return ThoughtState.ActiveAtStage(lumeLevel);
+        return lumeLevel == 99 ? ThoughtState.Inactive : ThoughtState.ActiveAtStage(lumeLevel);
     }
 }
-//}

@@ -1,9 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
+namespace MoloyTraits;
 
-//namespace MoloyTraits
-//{
 internal class MT_ThoughtWorker_VenturousQuestCompletedMood : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
@@ -30,4 +29,3 @@ internal class MT_ThoughtWorker_VenturousQuestCompletedMood : ThoughtWorker
         }
     }
 }
-//}

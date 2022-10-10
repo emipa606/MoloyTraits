@@ -1,14 +1,14 @@
 # MoloyTraits
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Moloy559s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1777036482
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 Have you ever thought that most traits seem a bit boring? This mod looks to add traits that will change the way you play with that colonist.
 
@@ -38,7 +38,7 @@ This pawn is filled with energy and can become inspired to move quickly even whe
 Every day this pawn has a 5% of gaining the “Go Frenzy” Inspiration.
 
 Volatile Crafter - 
-This pawn is a genius crafter that can frequently make fantastic items, unfortunately, they often struggle with the fact others can&apos;t see the world the way they do, leading to frequent mental breaks.
+This pawn is a genius crafter that can frequently make fantastic items, unfortunately, they often struggle with the fact others can't see the world the way they do, leading to frequent mental breaks.
 +3 Crafting
 +3 Artistic
 Every day this pawn has a 10% of gaining the “Inspired Creativity” Inspiration
@@ -51,7 +51,7 @@ This pawn makes a larger impact when talking to pawns.
 This pawn gets a better price when negotiating. 
 
 Eccentric -
-This pawn acts oddly and misses social cues. Their behavior often makes their words more impactful, for better or worse… They are so out of the social loop that they don&apos;t realize when they are being insulted.
+This pawn acts oddly and misses social cues. Their behavior often makes their words more impactful, for better or worse… They are so out of the social loop that they don't realize when they are being insulted.
 +4 Intelligence
 -4 Social
 This pawn has a higher social impact.
@@ -71,18 +71,18 @@ Psychopaths and other Luminaries are unaffected.
 If multiple friendly Luminaries are on the same map, pawns will only be affected by the Luminary they are closest too.
 
 License -
-The source is included with the download, just don’t claim it as your own and I don&apos;t care what you do with it.
+The source is included with the download, just don’t claim it as your own and I don't care what you do with it.
 
 Compatibility - 
 This mod should be compatible with everything. 
 
-If you like these traits, check out GwenBlanketKnight&apos;s mods. 
+If you like these traits, check out GwenBlanketKnight's mods. 
 https://steamcommunity.com/sharedfiles/filedetails/?id=1873132911
 Lots of great traits to enjoy.
 
-Also here&apos;s a Github link so you can tell me how my code is the scourge of the earth: https://github.com/moloy559/MoloyTraits/
+Also here's a Github link so you can tell me how my code is the scourge of the earth: https://github.com/moloy559/MoloyTraits/
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -92,6 +92,7 @@ Also here&apos;s a Github link so you can tell me how my code is the scourge of 
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

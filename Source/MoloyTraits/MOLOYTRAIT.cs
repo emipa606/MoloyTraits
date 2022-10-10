@@ -1,4 +1,6 @@
-﻿public enum MOLOYTRAIT
+﻿namespace MoloyTraits;
+
+public enum MOLOYTRAIT
 {
     CONDUCTOR,
     COMMANDER,

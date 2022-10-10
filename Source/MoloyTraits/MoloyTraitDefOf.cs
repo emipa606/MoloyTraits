@@ -1,9 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
+namespace MoloyTraits;
 
-//namespace MoloyTraits
-//{
 [DefOf]
 public static class MoloyTraitDefOf
 {
@@ -19,6 +18,3 @@ public static class MoloyTraitDefOf
     public static HediffDef MT_TyrantIsNear;
     public static InspirationDef Frenzy_Go;
 }
-
-
-//}
