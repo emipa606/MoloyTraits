@@ -1,5 +1,8 @@
 # Changelog for MoloyTraits
 
+1.4.2 - Improved the in-range code a bit, seems to be about half as bad now.
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 

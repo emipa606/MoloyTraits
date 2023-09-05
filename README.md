@@ -5,6 +5,8 @@
 Update of Moloy559s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1777036482
 
+Also check out the https://steamcommunity.com/sharedfiles/filedetails/?id=2873494547]Trait and Backstory Icons by superniqui10
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 
 	
@@ -95,4 +97,5 @@ Also here's a Github link so you can tell me how my code is the scourge of the e
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2566452140]![Image](https://img.shields.io/github/v/release/emipa606/MoloyTraits?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
 

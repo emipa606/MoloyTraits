@@ -66,79 +66,123 @@ public class MoloyTraitChecker : WorldComponent
             var pawns = map.mapPawns.AllPawnsSpawned.Where(x => x.RaceProps.Humanlike);
             foreach (var pawn in pawns)
             {
+                var listOfSameFactionPawns = new List<Pawn>();
                 foreach (var moloyTrait in moloyTraits)
                 {
-                    var hasTrait = pawn.story?.traits?.HasTrait(moloyTrait.traitDef);
-                    if (hasTrait == true)
+                    if (pawn.story?.traits?.HasTrait(moloyTrait.traitDef) != true)
                     {
-                        switch (moloyTrait.TRAIT)
-                        {
-                            case MOLOYTRAIT.PEPPY:
-                                CheckForInspiration(pawn, MoloyTraitDefOf.Frenzy_Go, 0.05f);
+                        continue;
+                    }
+
+                    switch (moloyTrait.TRAIT)
+                    {
+                        case MOLOYTRAIT.PEPPY:
+                            CheckForInspiration(pawn, MoloyTraitDefOf.Frenzy_Go, 0.05f);
+                            break;
+                        case MOLOYTRAIT.VOLATILE_CRAFTER:
+                            CheckForInspiration(pawn, InspirationDefOf.Inspired_Creativity, 0.1f);
+                            break;
+                        case MOLOYTRAIT.CONDUCTOR:
+                            if (pawn.Faction == null)
+                            {
                                 break;
-                            case MOLOYTRAIT.VOLATILE_CRAFTER:
-                                CheckForInspiration(pawn, InspirationDefOf.Inspired_Creativity, 0.1f);
-                                break;
-                            case MOLOYTRAIT.CONDUCTOR:
-                                foreach (var affectedPawn in pawns)
+                            }
+
+                            if (!listOfSameFactionPawns.Any())
+                            {
+                                listOfSameFactionPawns = pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
+                                    .Where(x => x.RaceProps.Humanlike).ToList();
+                            }
+
+                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            {
+                                if (checkAffected(pawn, affectedPawn, moloyTrait.range))
                                 {
-                                    if (checkAffected(pawn, affectedPawn, moloyTrait.range))
-                                    {
-                                        MAddHediff(affectedPawn, MoloyTraitDefOf.MT_ConductorIsNear, MT_BPD);
-                                    }
+                                    MAddHediff(affectedPawn, MoloyTraitDefOf.MT_ConductorIsNear, MT_BPD);
+                                }
+                            }
+
+                            break;
+                        case MOLOYTRAIT.COMMANDER:
+                            if (pawn.Faction == null)
+                            {
+                                break;
+                            }
+
+                            if (!listOfSameFactionPawns.Any())
+                            {
+                                listOfSameFactionPawns = pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
+                                    .Where(x => x.RaceProps.Humanlike).ToList();
+                            }
+
+                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            {
+                                if (checkAffected(pawn, affectedPawn, moloyTrait.range))
+                                {
+                                    MAddHediff(affectedPawn, MoloyTraitDefOf.MT_CommanderIsNear, MT_BPD);
+                                }
+                            }
+
+                            break;
+                        case MOLOYTRAIT.TYRANT:
+                            if (pawn.Faction == null)
+                            {
+                                break;
+                            }
+
+                            if (!listOfSameFactionPawns.Any())
+                            {
+                                listOfSameFactionPawns = pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
+                                    .Where(x => x.RaceProps.Humanlike).ToList();
+                            }
+
+                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            {
+                                if (checkAffected(pawn, affectedPawn, moloyTrait.range))
+                                {
+                                    MAddHediff(affectedPawn, MoloyTraitDefOf.MT_TyrantIsNear, MT_BPD);
+                                }
+                            }
+
+                            break;
+                        case MOLOYTRAIT.LUMINARY:
+                            if (pawn.Faction == null)
+                            {
+                                break;
+                            }
+
+                            if (!listOfSameFactionPawns.Any())
+                            {
+                                listOfSameFactionPawns = pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
+                                    .Where(x => x.RaceProps.Humanlike).ToList();
+                            }
+
+                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            {
+                                if (!checkAffected(pawn, affectedPawn, moloyTrait.range))
+                                {
+                                    continue;
                                 }
 
-                                break;
-                            case MOLOYTRAIT.COMMANDER:
-                                foreach (var affectedPawn in pawns)
-                                {
-                                    if (checkAffected(pawn, affectedPawn, moloyTrait.range))
-                                    {
-                                        MAddHediff(affectedPawn, MoloyTraitDefOf.MT_CommanderIsNear, MT_BPD);
-                                    }
-                                }
+                                var distance = pawn.Position.DistanceTo(affectedPawn.Position);
 
-                                break;
-                            case MOLOYTRAIT.TYRANT:
-                                foreach (var affectedPawn in pawns)
+                                if (pawnLumed(affectedPawn))
                                 {
-                                    if (checkAffected(pawn, affectedPawn, moloyTrait.range))
-                                    {
-                                        MAddHediff(affectedPawn, MoloyTraitDefOf.MT_TyrantIsNear, MT_BPD);
-                                    }
-                                }
-
-                                break;
-                            case MOLOYTRAIT.LUMINARY:
-                                foreach (var affectedPawn in pawns)
-                                {
-                                    if (!checkAffected(pawn, affectedPawn, moloyTrait.range))
+                                    if (!(lumedPawns[affectedPawn].distanceTo > distance))
                                     {
                                         continue;
                                     }
 
-                                    if (pawnLumed(affectedPawn))
-                                    {
-                                        if (!(lumedPawns[affectedPawn].distanceTo >
-                                              pawn.Position.DistanceTo(affectedPawn.Position)))
-                                        {
-                                            continue;
-                                        }
-
-                                        lumedPawns[affectedPawn].distanceTo =
-                                            pawn.Position.DistanceTo(affectedPawn.Position);
-                                        lumedPawns[affectedPawn].lumeStage = LumedPawn.getStage(pawn);
-                                    }
-                                    else
-                                    {
-                                        lumedPawns.Add(affectedPawn,
-                                            new LumedPawn(LumedPawn.getStage(pawn),
-                                                pawn.Position.DistanceTo(affectedPawn.Position)));
-                                    }
+                                    lumedPawns[affectedPawn].distanceTo = distance;
+                                    lumedPawns[affectedPawn].lumeStage = LumedPawn.getStage(pawn);
                                 }
+                                else
+                                {
+                                    lumedPawns.Add(affectedPawn, new LumedPawn(LumedPawn.getStage(pawn), distance));
+                                }
+                            }
 
-                                break;
-                        }
+                            break;
                     }
                 }
             }
@@ -187,11 +231,6 @@ public class MoloyTraitChecker : WorldComponent
     private bool checkAffected(Pawn _active, Pawn _affected, float _range)
     {
         if (_active == _affected)
-        {
-            return false;
-        }
-
-        if (_active.Faction != _affected.Faction)
         {
             return false;
         }
