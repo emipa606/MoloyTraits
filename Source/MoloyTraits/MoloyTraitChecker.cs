@@ -63,9 +63,11 @@ public class MoloyTraitChecker : WorldComponent
         maps = Find.Maps;
         foreach (var map in maps)
         {
-            var pawns = map.mapPawns.AllPawnsSpawned.Where(x => x.RaceProps.Humanlike);
-            foreach (var pawn in pawns)
+            var pawns = map.mapPawns.AllPawnsSpawned.Where(x => x.RaceProps.Humanlike).ToList();
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (var i = 0; i < pawns.Count; i++)
             {
+                var pawn = pawns[i];
                 var listOfSameFactionPawns = new List<Pawn>();
                 foreach (var moloyTrait in moloyTraits)
                 {
@@ -94,8 +96,10 @@ public class MoloyTraitChecker : WorldComponent
                                     .Where(x => x.RaceProps.Humanlike).ToList();
                             }
 
-                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            // ReSharper disable once ForCanBeConvertedToForeach
+                            for (var index = 0; index < listOfSameFactionPawns.Count; index++)
                             {
+                                var affectedPawn = listOfSameFactionPawns[index];
                                 if (checkAffected(pawn, affectedPawn, moloyTrait.range))
                                 {
                                     MAddHediff(affectedPawn, MoloyTraitDefOf.MT_ConductorIsNear, MT_BPD);
@@ -115,8 +119,10 @@ public class MoloyTraitChecker : WorldComponent
                                     .Where(x => x.RaceProps.Humanlike).ToList();
                             }
 
-                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            // ReSharper disable once ForCanBeConvertedToForeach
+                            for (var index = 0; index < listOfSameFactionPawns.Count; index++)
                             {
+                                var affectedPawn = listOfSameFactionPawns[index];
                                 if (checkAffected(pawn, affectedPawn, moloyTrait.range))
                                 {
                                     MAddHediff(affectedPawn, MoloyTraitDefOf.MT_CommanderIsNear, MT_BPD);
@@ -136,8 +142,10 @@ public class MoloyTraitChecker : WorldComponent
                                     .Where(x => x.RaceProps.Humanlike).ToList();
                             }
 
-                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            // ReSharper disable once ForCanBeConvertedToForeach
+                            for (var index = 0; index < listOfSameFactionPawns.Count; index++)
                             {
+                                var affectedPawn = listOfSameFactionPawns[index];
                                 if (checkAffected(pawn, affectedPawn, moloyTrait.range))
                                 {
                                     MAddHediff(affectedPawn, MoloyTraitDefOf.MT_TyrantIsNear, MT_BPD);
@@ -157,8 +165,10 @@ public class MoloyTraitChecker : WorldComponent
                                     .Where(x => x.RaceProps.Humanlike).ToList();
                             }
 
-                            foreach (var affectedPawn in listOfSameFactionPawns)
+                            // ReSharper disable once ForCanBeConvertedToForeach
+                            for (var index = 0; index < listOfSameFactionPawns.Count; index++)
                             {
+                                var affectedPawn = listOfSameFactionPawns[index];
                                 if (!checkAffected(pawn, affectedPawn, moloyTrait.range))
                                 {
                                     continue;
