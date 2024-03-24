@@ -10,23 +10,23 @@ public class MoloyTraitChecker : WorldComponent
 {
     private readonly Dictionary<Pawn, LumedPawn> lumedPawns = new Dictionary<Pawn, LumedPawn>();
 
-    private readonly List<MoloyTrait> moloyTraits = new List<MoloyTrait>
-    {
+    private readonly List<MoloyTrait> moloyTraits =
+    [
         new MoloyTrait(MOLOYTRAIT.COMMANDER, MoloyTraitDefOf.MT_Commander, 25),
         new MoloyTrait(MOLOYTRAIT.CONDUCTOR, MoloyTraitDefOf.MT_Conductor, 25),
         new MoloyTrait(MOLOYTRAIT.TYRANT, MoloyTraitDefOf.MT_Tyrant, 25),
         new MoloyTrait(MOLOYTRAIT.PEPPY, MoloyTraitDefOf.MT_Peppy, 0),
         new MoloyTrait(MOLOYTRAIT.VOLATILE_CRAFTER, MoloyTraitDefOf.MT_Volatile_Crafter, 0),
         new MoloyTrait(MOLOYTRAIT.LUMINARY, MoloyTraitDefOf.MT_Luminary, 9999)
-    };
+    ];
 
-    private readonly List<BodyPartDef> MT_BPD = new List<BodyPartDef>();
+    private readonly List<BodyPartDef> MT_BPD = [];
     private readonly int ticksUntillNextInspirationCheckMax = 60000;
     private readonly int ticksUntilNextTraitCheckMax = 120;
 
     private List<Map> maps;
 
-    public List<QuestMood> questMoods = new List<QuestMood>();
+    public List<QuestMood> questMoods = [];
     public int ticksSinceQuestCompleted;
 
     private int ticksUntillNextInspirationCheck = 60000;
@@ -34,7 +34,7 @@ public class MoloyTraitChecker : WorldComponent
 
     public MoloyTraitChecker(World world) : base(world)
     {
-        MT_BPD.Add(BodyPartDefOf.Brain);
+        MT_BPD.Add(DefDatabase<BodyPartDef>.GetNamedSilentFail("Brain"));
     }
 
     public override void WorldComponentTick()
@@ -43,7 +43,7 @@ public class MoloyTraitChecker : WorldComponent
         ticksUntilNextTraitCheck--;
         ticksSinceQuestCompleted++;
 
-        foreach (var questMood in questMoods)
+        foreach (var questMood in questMoods.ToList())
         {
             questMood.ticksTillRemoved--;
             if (questMood.ticksTillRemoved <= 0)
@@ -225,7 +225,7 @@ public class MoloyTraitChecker : WorldComponent
             pawn.health.RemoveHediff(hediff);
         }
 
-        var unused = HediffGiverUtility.TryApply(pawn, hediffDef, bodyPartDefs);
+        _ = HediffGiverUtility.TryApply(pawn, hediffDef, bodyPartDefs);
     }
 
     public bool pawnLumed(Pawn pawn)
@@ -262,34 +262,21 @@ public class MoloyTraitChecker : WorldComponent
 
         if (questMoods == null)
         {
-            questMoods = new List<QuestMood>();
+            questMoods = [];
         }
     }
 
-    private class MoloyTrait
+    private class MoloyTrait(MOLOYTRAIT _TRAIT, TraitDef _traitDef, float _range)
     {
-        public readonly float range;
-        public readonly MOLOYTRAIT TRAIT;
-        public readonly TraitDef traitDef;
-
-        public MoloyTrait(MOLOYTRAIT _TRAIT, TraitDef _traitDef, float _range)
-        {
-            TRAIT = _TRAIT;
-            traitDef = _traitDef;
-            range = _range;
-        }
+        public readonly float range = _range;
+        public readonly MOLOYTRAIT TRAIT = _TRAIT;
+        public readonly TraitDef traitDef = _traitDef;
     }
 
-    private class LumedPawn
+    private class LumedPawn(int _lumeStage, float _distance)
     {
-        public float distanceTo;
-        public int lumeStage;
-
-        public LumedPawn(int _lumeStage, float _distance)
-        {
-            lumeStage = _lumeStage;
-            distanceTo = _distance;
-        }
+        public float distanceTo = _distance;
+        public int lumeStage = _lumeStage;
 
         public static int getStage(Pawn _lumminary)
         {
